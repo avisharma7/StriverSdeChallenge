@@ -1,0 +1,36 @@
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+       int n= matrix.size();
+
+       //transpose of matrix
+       for(int i=0;i<n;i++){
+           for(int j=0; j< i;j++){
+               swap(matrix[i][j],  matrix[j][i]);
+           }
+       }
+
+    //reversal of each row
+    for(int i=0;i<n;i++){
+        reverse(matrix[i].begin(), matrix[i].end());
+    }
+
+    }
+};
+
+/*
+bruteforce:
+take another 2d matrix
+drop 1st row in last col
+2nd row in 2nd last col
+and so on;
+
+
+//optimal 
+observing the matrices
+1st col of orginal matrix= reverse of 1st row in rotated matrix
+hence steps to get valid output
+1) transpose the matrix
+2) reverse each row of the matrix
+
+*/
