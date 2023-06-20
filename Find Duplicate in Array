@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+
+int findDuplicate(vector<int> &arr, int n){
+	while(arr[0]!= arr[arr[0]]){
+		swap(arr[0], arr[arr[0]]);
+	}
+
+	//if NUMS[0]== nums[nums[0]]  (duplicate found)
+	return arr[0];
+}
+
+/* solved using arrays as hashmap
+tc: o(n)
+*/
